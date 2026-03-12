@@ -1,4 +1,4 @@
-import { profile, projects, type Project } from './data/siteData';
+import { profile, projects, type Project } from "./data/siteData";
 
 function App() {
   return (
@@ -39,7 +39,7 @@ type ProjectProps = {
 };
 
 function ProjectRow({ project }: ProjectProps) {
-  const Container = project.href ? 'a' : 'article';
+  const Container = project.href ? "a" : "article";
 
   return (
     <Container

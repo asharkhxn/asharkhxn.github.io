@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -23,7 +23,7 @@ body {
   min-width: 320px;
   background: #e6d3b7;
   color: #26163b;
-  font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+  font-family: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
 }
 
 * {
