@@ -12,7 +12,7 @@ export type LinkItem = {
 };
 
 export const profile = {
-  name: "ashar khan",
+  name: "Ashar khan",
   intro:
     "I'm a software engineer from London. I build thoughtful products and web experiences with a focus on clarity, detail, and performance.",
   education:
