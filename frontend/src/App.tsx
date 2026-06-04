@@ -2,11 +2,11 @@ import { profile, projects, type Project } from "./data/siteData";
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#e6d3b7] text-ink">
+    <div className="min-h-screen bg-[#f6e0c3] text-ink">
       <main className="mx-auto max-w-[1280px] px-7 pb-20 pt-16 sm:px-10 md:px-14 lg:px-20 lg:pb-28 lg:pt-24">
         <section className="grid gap-x-10 gap-y-8 text-[26px] leading-[1.48] tracking-[-0.03em] sm:text-[30px] md:grid-cols-2 md:gap-y-12 lg:grid-cols-[1.15fr_1.15fr_1.15fr_0.8fr] lg:text-[18px] lg:leading-[1.52]">
           <div>
-            <h1 className="font-normal lowercase">{profile.name}</h1>
+            <h1 className="font-normal">{profile.name}</h1>
           </div>
 
           <p>{profile.intro}</p>
