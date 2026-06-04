@@ -1,29 +1,7 @@
-# ashar-site
-Motivation - https://karaj.uk/
-Personal portfolio for **ashar khan**.
+# ashar khan — personal site
 
-Built with:
+Personal portfolio site for Ashar Khan, a software engineer from London.
 
-- Vite
-- React
-- TypeScript
-- Tailwind CSS
+Live at [asharkhxn.github.io](https://asharkhxn.github.io)
 
-## Content
-
-Edit `frontend/src/data/siteData.ts` to update the content.
-
-## Development
-
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-Build for production:
-
-```bash
-cd frontend
-npm run build
-```
+Built with Vite, React, TypeScript, and Tailwind CSS.
