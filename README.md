@@ -1,6 +1,6 @@
-# ashar khan — personal site
+# Ashar khan — personal site
 
-Personal portfolio site for Ashar Khan, a software engineer from London.
+Personal portfolio site for Ashar Khan, a software engineer from London, United Kingdom.
 
 Live at [asharkhxn.github.io](https://asharkhxn.github.io)
 
