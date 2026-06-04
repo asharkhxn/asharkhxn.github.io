@@ -15,7 +15,7 @@ function App() {
 
           <nav className="flex flex-col items-start gap-1 lg:pt-[1px]">
             {profile.links.map((link) => (
-              <a key={link.label} href={link.href} className="site-link">
+              <a key={link.label} href={link.href} className="site-link" target="_blank" rel="noopener noreferrer">
                 {link.label}
               </a>
             ))}
@@ -43,7 +43,7 @@ function ProjectRow({ project }: ProjectProps) {
 
   return (
     <Container
-      {...(project.href ? { href: project.href } : {})}
+      {...(project.href ? { href: project.href, target: "_blank", rel: "noopener noreferrer" } : {})}
       className="group grid gap-x-10 gap-y-3 text-[24px] leading-[1.45] tracking-[-0.03em] sm:text-[28px] md:grid-cols-2 lg:grid-cols-[1.15fr_1.15fr_1.15fr_0.8fr] lg:text-[18px] lg:leading-[1.52]"
     >
       <div>
