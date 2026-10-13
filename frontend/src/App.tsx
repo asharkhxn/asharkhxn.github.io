@@ -1,8 +1,5 @@
-import { lazy, Suspense } from "react";
+import type { ComponentType } from "react";
 import { profile } from "./data/siteData";
-
-const Timeline = lazy(() => import("./pages/Timeline"));
-const BeyondCode = lazy(() => import("./pages/BeyondCode"));
 
 const pages = [
   {
@@ -29,8 +26,7 @@ function PageArrow() {
   );
 }
 
-function App() {
-  const currentPage = document.documentElement.dataset.page ?? "home";
+function App({ Page, currentPage = "home" }: { Page?: ComponentType; currentPage?: string }) {
   const detailPage = pages.find((page) => page.id === currentPage);
 
   return (
@@ -48,9 +44,7 @@ function App() {
       )}
       <main id="main">
         {detailPage ? (
-          <Suspense fallback={<p className="page-loading" role="status">Loading {detailPage.title.toLowerCase()}…</p>}>
-            {currentPage === "timeline" ? <Timeline /> : <BeyondCode />}
-          </Suspense>
+          Page ? <Page /> : null
         ) : (
           <>
             <section className="profile-intro" aria-labelledby="profile-name">

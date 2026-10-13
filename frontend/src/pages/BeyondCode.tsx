@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { personalStories, type PersonalPhoto, type PersonalVideo } from "../data/beyondCode";
+import { personalStories, type PersonalPhoto } from "../data/beyondCode";
 
 type PhotoSelection = { storyId: string; index: number };
 
@@ -15,33 +15,6 @@ function Photo({ photo, thumbnail = false }: { photo: PersonalPhoto; thumbnail?:
       loading="lazy"
       decoding="async"
     />
-  );
-}
-
-function VideoMoment({ video }: { video: PersonalVideo }) {
-  const [playing, setPlaying] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const player = videoRef.current;
-    return () => player?.pause();
-  }, [playing]);
-
-  return (
-    <div className="moment-video">
-      {playing ? (
-        <video ref={videoRef} controls autoPlay muted playsInline preload="none" poster={video.poster} width={1280} height={720} aria-label={video.description}>
-          <source src={video.src} type="video/mp4" />
-          Your browser cannot play this clip. <a href={video.src}>Open the video.</a>
-        </video>
-      ) : (
-        <button type="button" className="video-poster" onClick={() => setPlaying(true)} aria-label={`Play video: ${video.caption}`}>
-          <img src={video.poster} alt={video.description} width={1000} height={562} loading="lazy" decoding="async" />
-          <span className="video-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m9 5 11 7-11 7V5Z" /></svg></span>
-          <span className="video-poster-label">Watch the moment <span aria-hidden="true">↗</span></span>
-        </button>
-      )}
-    </div>
   );
 }
 
@@ -95,12 +68,7 @@ function BeyondCode() {
                   <p className="story-summary">{story.summary}</p>
                 </div>
                 <div className="story-media">
-                  {story.video ? (
-                    <figure>
-                      <VideoMoment video={story.video} />
-                      <figcaption>{story.video.caption}</figcaption>
-                    </figure>
-                  ) : cover && (
+                  {cover && (
                     <figure className="story-cover">
                       <button type="button" className="photo-button" onClick={() => setSelection({ storyId: story.id, index: coverIndex })} aria-label={`View photo: ${cover.caption}`}>
                         <Photo photo={cover} />

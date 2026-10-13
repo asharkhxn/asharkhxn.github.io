@@ -9,13 +9,6 @@ export type PersonalPhoto = {
   caption: string;
 };
 
-export type PersonalVideo = {
-  src: string;
-  poster: string;
-  description: string;
-  caption: string;
-};
-
 export type PersonalStory = {
   id: string;
   category: string;
@@ -23,7 +16,6 @@ export type PersonalStory = {
   summary: string;
   photos: PersonalPhoto[];
   coverPhotoId?: string;
-  video?: PersonalVideo;
 };
 
 const media = "/media/beyond-code";
@@ -61,14 +53,19 @@ export const personalStories: PersonalStory[] = [
     id: "london",
     category: "A city moment / London",
     title: "City lights, after dark.",
-    summary: "A short glimpse of London after dark: bright screens, passing traffic, and a city still in motion.",
-    photos: [],
-    video: {
-      src: `${media}/london-night.mp4`,
-      poster: `${media}/london-night-poster.jpg`,
-      description: "A short nighttime street scene in London, with illuminated billboards and passing traffic.",
-      caption: "London, after dark.",
-    },
+    summary: "Piccadilly Circus after dark: bright billboards, a red double-decker, and a city still in motion.",
+    photos: [
+      {
+        id: "london-night",
+        src: `${media}/london-night-1600.jpg`,
+        smallSrc: `${media}/london-night-640.jpg`,
+        width: 1600,
+        height: 1000,
+        smallWidth: 640,
+        alt: "Illuminated billboards and a red double-decker bus at Piccadilly Circus in London at night",
+        caption: "London, after dark.",
+      },
+    ],
   },
   {
     id: "penny",
